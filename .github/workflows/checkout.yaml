@@ -1,5 +1,5 @@
 name: unit test
-on: push
+on: push # trigger 
 jobs:
     unit-test:
         runs-on: ubuntu-latest
@@ -9,7 +9,7 @@ jobs:
           - name: setup Node
             uses: actions/setup-node@v4
             with:
-                node-version: '20'
+              node-version: '20'
           - name: install dependencies
             run: npm ci
           - name: unit-test

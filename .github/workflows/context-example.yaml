@@ -1,0 +1,9 @@
+name: context-example
+on: workflow_dispatch
+jobs:
+    run-context:
+        runs-on: ubuntu-latest
+        steps:
+          - name: learning github context
+            shell: bash
+            run: echo ${{ toJson(github) }}  

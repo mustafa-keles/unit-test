@@ -15,6 +15,7 @@ jobs:
           - name: unit-test
             run: npm run test  
     build-project:
+        needs: unit-test 
         runs-on: ubuntu-latest
         steps:
           - name: checking-out the code

@@ -6,4 +6,4 @@ jobs:
         steps:
           - name: learning github context
             shell: bash
-            run: echo ${{ toJSON(github) }}  
+            run: echo '${{ github.run_number}}'

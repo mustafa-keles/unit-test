@@ -4,6 +4,9 @@ on:
     branches:
       - master
       - develop
+  pull_request:
+    types: [opened, closed, reopened]
+  workflow_dispatch:  
 jobs:
     unit-test:
         runs-on: ubuntu-latest

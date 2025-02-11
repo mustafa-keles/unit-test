@@ -38,8 +38,8 @@ jobs:
           - name: uploading build
             uses: actions/upload-artifact@v4
             with:
-              name: uploading path
-              path: my-path
+              name: uploading-dist
+              path: dist
             
     deploy-project:
       needs: build-project
@@ -48,8 +48,7 @@ jobs:
         - name: downloading artifact
           uses: actions/download-artifact@v4
           with:
-            name: uploading path
-            path: my-path
+            name: uploading-dist
         - name: see the content
           run: ls
         - name: deploy the build

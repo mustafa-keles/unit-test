@@ -1,5 +1,9 @@
 name: unit test
-on: push # trigger 
+on: 
+  push:
+    branches:
+      - main
+      - develop
 jobs:
     unit-test:
         runs-on: ubuntu-latest

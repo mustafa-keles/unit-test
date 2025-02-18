@@ -24,7 +24,7 @@ jobs:
           - name: see the github-token
             run: echo '${{ secrets.GITHUB_TOKEN }}'
           - name: check github run number
-            run: echo ${{ github.run-number}}
+            run: echo '${{ github.run-number}}'
     build-project:
         needs: unit-test 
         runs-on: ubuntu-latest

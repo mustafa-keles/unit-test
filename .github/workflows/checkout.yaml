@@ -22,9 +22,9 @@ jobs:
           - name: unit-test
             run: npm run test
           - name: see the github-token
-            run: echo '${{ secrets.GITHUB_TOKEN }}'
+            run: echo '${{ github.triggering_actor }}'
           - name: check github run number
-            run: echo '${{ github.run-number}}'
+            run: echo '${{ github.run_number}}'
     build-project:
         needs: unit-test 
         runs-on: ubuntu-latest

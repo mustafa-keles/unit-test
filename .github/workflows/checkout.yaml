@@ -28,7 +28,8 @@ jobs:
     build-project:
         needs: unit-test 
         runs-on: ubuntu-latest
-        continue-on-error: true
+ #       continue-on-error: true
+        if: failure()
         steps:
           - name: checking-out the code
             uses: actions/checkout@v4
@@ -49,6 +50,7 @@ jobs:
     deploy-project:
       needs: build-project
       runs-on: ubuntu-latest
+      if: success()
       steps:
         - name: downloading artifact
           uses: actions/download-artifact@v4

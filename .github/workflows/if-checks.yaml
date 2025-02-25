@@ -3,7 +3,7 @@ on: workflow_dispatch
 jobs:
   example_job:
     runs-on: ubuntu-latest
-    if: ${{ runner.os }} == 'macOS'
+ #   if: ${{ runner.os }} == 'macOS'
     steps:
       - name: Run always
         run: echo "This step always runs"
@@ -15,3 +15,6 @@ jobs:
       - name: Run only on pull requests
         if: github.event_name == 'pull_request'
         run: echo "This step runs only on pull requests"
+
+      - name: Run only on pull requests
+        run: echo {{ toJSON(runner)}}  

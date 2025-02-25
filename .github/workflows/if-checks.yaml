@@ -1,0 +1,16 @@
+name: if-conditional check
+on: workflow_dispatch
+jobs:
+  example_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run always
+        run: echo "This step always runs"
+
+      - name: Run only on main branch
+        if: github.ref == 'refs/heads/main'
+        run: echo "This step runs only on main branch"
+
+      - name: Run only on pull requests
+        if: github.event_name == 'pull_request'
+        run: echo "This step runs only on pull requests"

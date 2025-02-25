@@ -3,7 +3,7 @@ on: workflow_dispatch
 jobs:
   example_job:
     runs-on: ubuntu-latest
-    if: github.actor == 'mustafa-keles'
+    if: github.actor == 'mehmet-keles'
     steps:
       - name: Run always
         run: echo "This step always runs"

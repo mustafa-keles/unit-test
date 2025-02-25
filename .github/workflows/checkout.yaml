@@ -4,6 +4,7 @@ on:
     branches:
       - master
       - develop
+      - main
   pull_request:
     types: [opened, closed, reopened]
   workflow_dispatch:  
@@ -50,7 +51,7 @@ jobs:
     deploy-project:
       needs: build-project
       runs-on: ubuntu-latest
-      if: success()
+      if: always()
       steps:
         - name: downloading artifact
           uses: actions/download-artifact@v4

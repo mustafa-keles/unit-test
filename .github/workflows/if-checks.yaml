@@ -17,4 +17,4 @@ jobs:
         run: echo "This step runs only on pull requests"
 
       - name: Run only on pull requests
-        run: echo '${{ toJSON(runner) }}'  
+        run: echo '${{ toJSON(github) }}'  
